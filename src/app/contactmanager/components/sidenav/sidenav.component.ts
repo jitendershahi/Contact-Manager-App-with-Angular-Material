@@ -18,12 +18,22 @@ export class SidenavComponent implements OnInit {
    matchMedia(`(max-width:${SMALL_WIDTH_BREAKPOINT}px)`)
 
    users:Observable<User[]>
+   isDarkTheme:boolean = false;
+   dir:string = 'ltr'
 
   constructor(zone: NgZone , 
     private userService:UserService,
     private route:Router) { 
     this.mediaMatcher.addListener(mql =>
            zone.run(() => this.mediaMatcher = mql));
+  }
+
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+  }
+
+  toggleDir() {
+      this.dir = this.dir == 'ltr' ? 'rtl' : 'ltr';
   }
 
 

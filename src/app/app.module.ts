@@ -4,9 +4,14 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { MaterialModule } from './shared/material.module';
-import { FormsModule } from '@angular/forms';
+import { Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
+const route:Routes = [
+  {path:'contactmanager',loadChildren:'./contactmanager/contactmanager.module#ContactmanagerModule'},  
+  {path:'demo',loadChildren:'./demo/demo.module#DemoModule'},
+  {path:'**',redirectTo:'contactmanager'}
+]
 
 @NgModule({
   declarations: [
@@ -15,8 +20,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    FormsModule
+    RouterModule.forRoot(route)
   ],
   providers: [],
   bootstrap: [AppComponent]

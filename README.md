@@ -1,9 +1,10 @@
 # Angularmaterial
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+This is contact manager app which jolt my angular material learning.
+This project was generated with [Angular CLI] version 1.7.3.
 
 ## Development server
-
+First install npm to have dependencies by running npm install
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
